@@ -1,0 +1,6 @@
+{
+  "name": "Cognitive Games Lab",
+  "description": "Interactive cognitive assessment practice simulator featuring Math Bubble Arena, Memory Maze, and Path Rotation with deterministic seeded puzzles and local analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

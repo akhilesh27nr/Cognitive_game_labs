@@ -1,0 +1,886 @@
+# MASTER PROMPT — COGNITIVE GAMES LAB
+## UI-Only Transformation into a Premium Gamified Cognitive Puzzle Arcade
+
+You are modifying my existing project, **Cognitive Games Lab**. I have provided the original source-code ZIP and PDFs containing screenshots of my current application and the visual style I want.
+
+Your task is to redesign the **entire application's user interface** into a premium, immersive, gamified cognitive puzzle arcade.
+
+## THE MOST IMPORTANT RULE: CHANGE ONLY THE UI
+
+**Do not change any existing functionality, game logic, application behavior, data processing, calculations, or business rules.**
+
+This is strictly a UI/UX redesign.
+
+My existing application already contains three games, a dashboard, assessment, practice, history, results, settings, and other functionality. I want the existing product to look and feel significantly better without losing anything that currently works.
+
+Treat the existing source code as the authoritative specification for how the application must behave.
+
+### Strictly prohibited changes
+
+Do not modify or replace:
+
+- Game engines or puzzle-generation algorithms.
+- Game rules, mechanics, or validation logic.
+- Scoring formulas or score calculations.
+- Difficulty multipliers.
+- Timer durations, countdown behavior, or timeout rules.
+- Question-generation behavior.
+- Existing game archetypes.
+- Assessment workflows, sequences, or configuration behavior.
+- Practice options and selection logic.
+- History recording and retrieval.
+- Results calculations.
+- Settings functionality.
+- LocalStorage persistence.
+- Storage schemas or migrations.
+- Data import/export formats or behavior.
+- Session recovery.
+- Cross-tab synchronization.
+- Existing route functionality.
+- Keyboard and mouse interaction semantics.
+- Existing API integrations, if any.
+- Any other working functionality.
+
+Do not remove options because they are visually inconvenient. Do not simplify a screen by deleting its controls. Do not replace a functioning component with a static mockup.
+
+Do not rewrite the application from scratch.
+
+Do not refactor the game engines as part of the redesign.
+
+Do not add a new framework, component library, animation library, or other major dependency without my explicit approval.
+
+If an existing UI component contains both presentation and business logic, make the smallest safe presentation-only changes possible. Keep its state transitions and event handlers intact.
+
+**The objective is to change how the application looks, not what the application does.**
+
+### Preferred implementation approach
+
+Prioritize changes to:
+
+- CSS and styling files.
+- Design tokens and theme variables.
+- Layout and responsive presentation.
+- Navigation presentation.
+- Existing component markup where necessary for visual structure.
+- Existing reusable presentation components.
+- Decorative HTML, CSS, and SVG elements.
+- Typography, spacing, colors, surfaces, and animations.
+
+Existing components may be reorganized visually if necessary, but preserve their functional behavior and data flow.
+
+Do not rename, remove, or replace state variables, handlers, routes, storage keys, or engine interfaces unnecessarily.
+
+If a visual change appears to require a functional change, do not implement the functional change. Find a presentation-only alternative.
+
+---
+
+# 1. REQUIRED APPLICATION NAVIGATION
+
+I have a specific navigation layout in mind. Implement it using the existing routes and components wherever possible.
+
+The application should have two clearly differentiated navigation areas:
+
+1. A persistent **left sidebar** for the main application sections.
+2. A prominent **three-tab game ribbon** for the three existing games.
+
+The result should feel like a professional game launcher and puzzle workspace rather than a traditional SaaS dashboard.
+
+## 1.1 Left sidebar — main application sections
+
+Place the primary application navigation in a clean, visually attractive sidebar.
+
+The sidebar must retain all existing navigation destinations, including the following where they exist in the current application:
+
+- Dashboard / Home.
+- Assessment.
+- Practice.
+- History.
+- Results, if it is a separate destination.
+- Settings.
+- Any other existing top-level destination or navigation option.
+
+Do not assume that the list above contains every current route. Inspect the source and preserve all existing navigation options.
+
+### Sidebar visual design
+
+Use a premium, game-inspired appearance:
+
+- A compact Cognitive Games Lab brand area.
+- Clear icons and readable labels.
+- A distinct active-navigation indicator.
+- Subtle hover and focus feedback.
+- Carefully controlled accent colors.
+- Clean spacing and grouping.
+- A visually attractive but restrained background.
+- Consistent typography.
+- Smooth transitions.
+- Responsive behavior.
+
+The sidebar should look like the navigation system of a sophisticated cognitive gaming product.
+
+Avoid making it look like a generic admin dashboard.
+
+Use the existing Lucide icon package if available. Do not add a new icon library just for the redesign.
+
+### Sidebar behavior
+
+Preserve the existing navigation functionality.
+
+Every existing destination must remain accessible.
+
+Do not change route paths unnecessarily.
+
+Do not break browser back/forward behavior, direct links, nested routes, or refresh behavior.
+
+If the application already supports collapsing or expanding navigation, preserve that functionality.
+
+If the sidebar is made collapsible as a visual enhancement, it must be fully functional and must not remove any navigation option.
+
+On mobile, convert the sidebar into a suitable drawer or compact navigation layout while preserving access to every destination.
+
+---
+
+# 2. THREE DEDICATED GAME RIBBON TABS
+
+This is a key requirement.
+
+I have three games in the application, and I want each game to have its own dedicated tab in a prominent horizontal ribbon or tab bar.
+
+The three tabs must represent the actual existing games:
+
+1. **Quick-Fire Math / Math Bubble Arena**
+2. **Memory Maze**
+3. **Path Finder / Path Rotation Studio**
+
+Use the actual names from the current application where necessary to maintain consistency.
+
+These tabs should be visually prominent and easy to reach.
+
+## 2.1 Ribbon placement
+
+Place the three-game ribbon near the top of the main application content, below the main header or in another location that provides a clear and consistent hierarchy.
+
+The intended layout is:
+
+- Left sidebar: main application sections.
+- Main content: page header and game ribbon.
+- Below the ribbon: the selected page or game content.
+
+The ribbon should be visually distinct from the sidebar.
+
+Use a segmented-tab or game-selector design with three clearly separated items.
+
+The game ribbon should remain consistent across the application wherever the shared application shell is displayed.
+
+For example, a user should be able to move from the dashboard to a game with a single click on the appropriate game tab.
+
+## 2.2 Give each game its own identity
+
+Do not make all three tabs visually identical apart from their labels.
+
+Use distinct but harmonious accents.
+
+**Quick-Fire Math**
+
+- Warm amber, orange, coral, or similar accents.
+- A numerical or bubble-related icon.
+- A visual identity associated with speed and arithmetic.
+
+**Memory Maze**
+
+- Blue, violet, or indigo accents.
+- A maze or navigation-related icon.
+- A visual identity associated with memory and exploration.
+
+**Path Finder**
+
+- Cyan, teal, or selectively used magenta accents.
+- A route, grid, or connection-related icon.
+- A visual identity associated with spatial reasoning and path construction.
+
+Use these identities consistently in the ribbon, game cards, and gameplay screens.
+
+Do not overuse neon colors or create excessive glowing borders.
+
+## 2.3 Tab interaction
+
+The three tabs must navigate to the existing games using their existing routes.
+
+Preserve all current route and state behavior.
+
+The active tab must be clearly highlighted.
+
+The active indicator should update correctly when:
+
+- The user clicks a game tab.
+- The user opens a game route directly.
+- The user refreshes the browser on a game route.
+- The user uses browser back or forward navigation.
+- The user navigates to another section.
+
+The tabs must not become a second implementation of game state.
+
+They should serve as navigation controls, not duplicate the existing game components or game-session state.
+
+Do not introduce a new tab-based state-management system that conflicts with React Router or the current application architecture.
+
+If the current application uses React Router, derive the active tab from the current route.
+
+If the application has an existing game session in progress, navigating through the ribbon must respect the current application's existing behavior. Do not introduce new pause, reset, or session-abandonment behavior.
+
+## 2.4 Mobile ribbon
+
+On mobile, preserve all three game tabs.
+
+Use responsive sizing, horizontal scrolling, or another suitable layout if required.
+
+Do not allow the ribbon to cause horizontal overflow across the entire application.
+
+Keep the active tab visible and easy to identify.
+
+Do not hide any game simply because the screen is narrow.
+
+---
+
+# 3. THE ENTIRE APPLICATION MUST HAVE A GAMIFIED VISUAL IDENTITY
+
+The redesign must cover the entire application, not just the three games.
+
+The dashboard, assessment, practice, history, results, settings, dialogs, forms, and other existing screens must all look like parts of the same premium cognitive gaming product.
+
+However, not every screen should look like an active game.
+
+The supporting screens should be clean and readable, while the three gameplay screens should be immersive and focused.
+
+Use a cohesive design system with different levels of visual intensity for different contexts.
+
+## 3.1 Overall appearance
+
+Aim for a premium cognitive puzzle arcade with:
+
+- Sophisticated dark navy, indigo, and blue foundations where appropriate.
+- Carefully selected warm and cool game-specific accents.
+- Layered but restrained surfaces.
+- Clear typography.
+- Attractive game cards.
+- Purposeful gradients.
+- Subtle depth.
+- Tactile controls.
+- Smooth interactions.
+- Consistent spacing.
+- Readable text.
+- Strong contrast.
+- Responsive layouts.
+
+Do not merely change the current background color.
+
+Do not apply the same neon border to every card.
+
+Avoid the following:
+
+- Generic SaaS dashboard styling.
+- Repeated metric cards everywhere.
+- Excessive cyan borders.
+- Overuse of glow effects.
+- Excessive glassmorphism.
+- Oversized decorative panels.
+- Childish cartoon styling.
+- Unnecessary animation.
+- Tiny text.
+- Overcrowded screens.
+- Excessively complex navigation.
+- Decorative elements that obscure important controls.
+
+The finished UI should look intentionally designed, polished, and suitable for a high-quality portfolio project.
+
+---
+
+# 4. DASHBOARD — A GAME LAUNCHER, NOT AN ANALYTICS PAGE
+
+Redesign the existing dashboard while preserving all of its current functionality.
+
+The home screen should immediately communicate that the user is entering a cognitive puzzle arcade.
+
+### Desired presentation
+
+- A strong welcome or hero section.
+- A concise explanation of the application.
+- A prominent play or continue action where supported.
+- Three visually distinct game cards.
+- Useful, existing progress information.
+- Recent activity where currently supported.
+- A clear route to assessment and practice.
+- Attractive empty states for new users.
+
+The three game cards should provide direct access to their respective existing games.
+
+Use CSS, SVG, or existing assets to give each card a distinctive appearance.
+
+Keep the dashboard focused on playing and discovering games rather than displaying numerous generic metrics.
+
+### Preserve functionality
+
+Retain all existing dashboard actions, information, controls, and data bindings.
+
+Do not invent scores, streaks, personal bests, achievements, or recommendations.
+
+Do not remove existing features just because they do not fit the new layout.
+
+---
+
+# 5. QUICK-FIRE MATH — UI REDESIGN ONLY
+
+Redesign the existing Quick-Fire Math gameplay screen into an attractive, tactile number-bubble game.
+
+Make the existing puzzle board the focal point.
+
+Improve the presentation of:
+
+- Number bubbles.
+- Arithmetic expressions.
+- Countdown timer.
+- Question or round progress.
+- Current score.
+- Selection-order markers.
+- Correct and incorrect feedback.
+- Streak information, if already supported.
+- Next-question transitions.
+- End-of-round results.
+- Existing reset, restart, help, and exit controls.
+
+Use warm, bright accents to create a distinctive mathematical-game identity.
+
+Bubbles should have readable values, clear selection states, and comfortable mouse and touch targets.
+
+### Absolutely preserve existing functionality
+
+Do not modify:
+
+- Puzzle generation.
+- Arithmetic expression evaluation.
+- Supported operators.
+- Mathematical rules.
+- Ordering requirements.
+- Tie-breaking behavior.
+- Difficulty selection.
+- Scoring.
+- Timers.
+- Round progression.
+- Session recording.
+- Existing controls and options.
+
+Do not rewrite the expression evaluator.
+
+Do not introduce JavaScript `eval()`.
+
+All existing game modes, archetypes, and options must remain available.
+
+Only change their presentation.
+
+---
+
+# 6. MEMORY MAZE — UI REDESIGN ONLY
+
+Transform the existing Memory Maze screen into an immersive, readable maze puzzle.
+
+Make the grid the main visual focus.
+
+Improve the presentation of:
+
+- Maze cells.
+- Player/avatar.
+- Start and exit.
+- Hidden barriers.
+- Keys and locked gates where applicable.
+- Directional controls.
+- Timer.
+- Moves and attempts.
+- Relevant progress indicators.
+- Invalid movement feedback.
+- Completion and failure screens.
+- Existing restart, reset, help, and exit controls.
+
+Use an atmospheric blue-violet identity while keeping the board readable.
+
+The maze should look like a real interactive puzzle, not a generic grid of rectangles.
+
+### Absolutely preserve existing functionality
+
+Do not modify:
+
+- Maze-generation algorithms.
+- BFS solvability validation.
+- Movement rules.
+- Hidden-wall behavior.
+- Key and gate logic.
+- One-way restrictions.
+- Difficulty modes.
+- Attempt counting.
+- Timer behavior.
+- Scoring.
+- Restart behavior.
+- Session recording.
+
+Do not reveal hidden information through decorative rendering or previews.
+
+Do not remove any existing controls or configuration options.
+
+Only redesign how the current mechanics are displayed and interacted with visually.
+
+---
+
+# 7. PATH FINDER — UI REDESIGN ONLY
+
+Redesign the existing Path Finder / Path Rotation Studio screen as a premium tile-connection puzzle.
+
+The board must be visually clear, tactile, and easy to understand.
+
+Improve the presentation of:
+
+- Tile grid.
+- Directional ports.
+- Source and destination.
+- Checkpoints.
+- Selected tile.
+- Rotation and flip controls.
+- Valid connected paths.
+- Disconnected paths.
+- Move counter.
+- Timer.
+- Progress indicators.
+- Completion and failure states.
+- Existing restart, reset, help, and exit controls.
+
+Use a restrained cyan, teal, and magenta visual identity.
+
+Use clear path segments and directional connections so users can understand the tile configuration without guessing.
+
+### Absolutely preserve existing functionality
+
+Do not modify:
+
+- Tile-generation algorithms.
+- Tile connections.
+- Directional ports.
+- Reciprocal connection requirements.
+- Rotation rules.
+- Flip rules.
+- Path tracing.
+- Checkpoint validation.
+- Victory detection.
+- Scoring.
+- Timer behavior.
+- Existing controls.
+- Session recording.
+
+Do not calculate victory using visual adjacency alone.
+
+Continue using the existing engine's actual validation.
+
+Do not remove existing modes, archetypes, or configuration options.
+
+Only redesign the existing presentation.
+
+---
+
+# 8. PRACTICE — RETAIN EVERY EXISTING OPTION
+
+Redesign the Practice screen to match the new gamified visual identity.
+
+Preserve every existing option, selection, filter, archetype, configuration field, and action.
+
+Do not simplify the functionality by deleting controls.
+
+Improve the layout so that users can understand the available games and practice configurations more easily.
+
+Use:
+
+- Attractive game-selection cards.
+- Clear category and difficulty labels.
+- Better visual grouping.
+- Compact configuration sections.
+- Helpful descriptions.
+- Clear selection states.
+- A prominent start action.
+- Responsive layouts.
+
+If the current application has 50 archetypes per engine, preserve all of them.
+
+Do not hardcode a smaller list.
+
+Use the existing catalogue and data structures.
+
+Every selection must continue to feed into the same existing practice workflow.
+
+---
+
+# 9. ASSESSMENT — RETAIN EVERY EXISTING OPTION
+
+Redesign the Assessment screen as a polished, game-themed assessment setup and progression experience.
+
+Preserve every existing assessment mode, configuration option, game selection, difficulty, round setting, and supported control.
+
+Improve only how these elements are presented.
+
+Use clear visual grouping and concise instructions.
+
+Make the primary action prominent.
+
+If the current assessment is a multi-stage process, preserve its existing stage transitions.
+
+If the current assessment is a single-page form, do not change its underlying workflow merely to introduce a multi-step UI.
+
+Do not modify assessment scoring, game ordering, session recovery, result aggregation, timers, or persistence.
+
+Do not remove options to make the screen appear cleaner.
+
+The goal is to make the existing assessment easier to navigate without changing how it works.
+
+---
+
+# 10. HISTORY AND RESULTS — RETAIN ALL INFORMATION
+
+Redesign History and Results to match the new visual identity.
+
+Preserve all existing:
+
+- Session records.
+- Scores.
+- Metrics.
+- Filters.
+- Sorting.
+- Navigation.
+- Result details.
+- Review actions.
+- Deletion options.
+- Export functionality, if present.
+
+Use attractive timelines, compact tables, progress visuals, and game-specific accents where suitable.
+
+Do not remove columns or fields simply to reduce visual density.
+
+If a screen contains a large amount of information, organize it using better spacing, sections, tabs, or collapsible presentation where appropriate.
+
+Any new collapsible section must preserve access to all existing information.
+
+Do not alter calculations or saved records.
+
+---
+
+# 11. SETTINGS — RETAIN ALL SETTINGS AND DATA OPERATIONS
+
+Redesign the settings screen without removing or changing any existing setting.
+
+Preserve:
+
+- Every existing preference.
+- All configuration values.
+- All input controls.
+- Data import.
+- Data export.
+- Reset and clear actions.
+- Validation.
+- Confirmation dialogs.
+- Persistence behavior.
+- Existing settings descriptions and warnings.
+
+Group settings logically and improve readability.
+
+Use attractive controls, clear labels, and appropriate feedback.
+
+Do not introduce nonfunctional toggles.
+
+Do not change the meaning or default value of any setting.
+
+Do not change storage schemas, migrations, or import/export formats.
+
+---
+
+# 12. PRESERVE ALL EXISTING OPTIONS ACROSS THE APPLICATION
+
+This is a separate and explicit requirement.
+
+**Every option currently available in the application must remain available after the redesign.**
+
+Before modifying a screen, inventory its existing:
+
+- Buttons.
+- Links.
+- Tabs.
+- Dropdowns.
+- Selectors.
+- Filters.
+- Search fields.
+- Configuration controls.
+- Difficulty options.
+- Game modes.
+- Archetype choices.
+- Checkboxes.
+- Toggles.
+- Keyboard controls.
+- Restart/reset actions.
+- Export/import operations.
+- Confirmation dialogs.
+- Error recovery actions.
+- Navigation destinations.
+
+After redesigning that screen, verify that every item remains accessible and functional.
+
+You may change:
+
+- Its position.
+- Its spacing.
+- Its size.
+- Its color.
+- Its typography.
+- Its icon.
+- Its visual grouping.
+- Its responsive arrangement.
+- Its styling and animation.
+
+You must not change:
+
+- What the option does.
+- Its available values.
+- Its defaults.
+- Its validation rules.
+- Its side effects.
+- Its relationship with other options.
+- Its persistence behavior.
+
+Do not hide an option permanently on mobile.
+
+If an option is moved into an accordion, dropdown, or secondary panel, make sure it remains discoverable and accessible.
+
+Do not replace an existing working control with a decorative illustration.
+
+---
+
+# 13. STRICT CHANGE BOUNDARY
+
+Before implementation, identify which files contain:
+
+1. Presentation and styling.
+2. Navigation.
+3. Shared UI state.
+4. Game logic.
+5. Scoring and timers.
+6. Persistence.
+7. Assessment orchestration.
+8. Tests.
+
+Prefer editing presentation files.
+
+If the navigation shell requires modifications, preserve route definitions and route destinations.
+
+If component markup must change, preserve the existing functional props, event handlers, state updates, and data flow.
+
+Do not edit game-engine, scoring, persistence, or assessment logic to achieve visual effects.
+
+If a file combines logic and presentation, change only the presentation-related portions.
+
+Do not make unrelated bug fixes during this task. If you discover a pre-existing issue that appears to require a functional change, document it separately rather than silently changing it.
+
+Do not rename state variables or event handlers just to improve naming.
+
+Do not change dependency versions.
+
+Do not install new dependencies.
+
+Do not delete tests or suppress errors to make the redesign appear successful.
+
+---
+
+# 14. ANIMATION AND INTERACTION DESIGN
+
+Use purposeful visual feedback for:
+
+- Navigation selection.
+- Game-tab selection.
+- Button hover and press.
+- Game-card selection.
+- Bubble selection.
+- Maze movement.
+- Tile rotation.
+- Path updates.
+- Existing correct/incorrect feedback.
+- Existing success/failure states.
+- Opening and closing overlays.
+
+Animations must remain presentation-only.
+
+They must not delay existing input handling or change game timing.
+
+Respect `prefers-reduced-motion`.
+
+Do not add sound effects or new gameplay behavior unless already supported.
+
+Avoid excessive animations and constant visual movement.
+
+---
+
+# 15. RESPONSIVE DESIGN
+
+Ensure that the redesigned application works across desktop, laptop, tablet, and mobile screens.
+
+Test representative viewport sizes such as:
+
+- 1440 × 900.
+- 1280 × 800.
+- 768 × 1024.
+- 390 × 844.
+- 320–360 pixels wide.
+
+The layout should adapt without changing application functionality.
+
+### Desktop
+
+- Persistent sidebar.
+- Prominent three-game ribbon.
+- Spacious main content.
+- Readable, focused game boards.
+
+### Tablet
+
+- Compact sidebar where appropriate.
+- Clearly visible game tabs.
+- Properly sized boards and controls.
+
+### Mobile
+
+- Responsive sidebar or drawer.
+- All three game tabs accessible.
+- No unintended horizontal overflow.
+- Touch-friendly controls.
+- Readable timer and progress.
+- Properly fitted puzzle boards.
+- Accessible settings and configuration options.
+
+Do not remove functionality or options to achieve a mobile layout.
+
+Rearrange the presentation instead.
+
+---
+
+# 16. TESTING: PROVE THAT FUNCTIONALITY DID NOT CHANGE
+
+Before editing, establish a baseline by running the existing tests and build checks where possible.
+
+After editing, run the same checks again.
+
+Compare the results.
+
+Do not claim that functionality was preserved merely because the application compiles.
+
+## Required verification
+
+### Navigation
+
+- Every existing sidebar destination works.
+- All three game tabs open the correct existing game routes.
+- Active tabs correctly reflect the current route.
+- Browser back and forward work.
+- Direct URLs and refreshes work.
+- Mobile navigation retains all destinations.
+
+### Game functionality
+
+- Existing Quick-Fire Math selections and scoring remain unchanged.
+- Existing Memory Maze movement and hidden-wall behavior remain unchanged.
+- Existing Path Finder rotation, flipping, and path validation remain unchanged.
+- Timers behave exactly as before.
+- Restart and reset behave exactly as before.
+- Existing game options remain available.
+
+### Supporting functionality
+
+- Practice selections work.
+- Assessment configuration and lifecycle work.
+- Results use the same underlying data.
+- History remains intact.
+- Settings retain their existing values and behavior.
+- Import/export works as before.
+- Persistence and session recovery remain intact.
+
+### Technical checks
+
+Run the existing project commands for:
+
+- TypeScript checking.
+- Linting.
+- Unit tests.
+- Component/navigation tests.
+- Production build.
+- E2E tests where available.
+
+Do not modify functional tests simply to accommodate the redesign.
+
+If a test fails after the UI changes, investigate whether the UI has broken the existing behavior.
+
+Report failures honestly.
+
+---
+
+# 17. FINAL ACCEPTANCE CRITERIA
+
+The redesign is complete only when the following are satisfied:
+
+1. The application has a premium, consistent, gamified visual identity.
+2. The main application sections appear in a sidebar.
+3. The three games have their own prominent ribbon tabs.
+4. The active game tab follows the existing route.
+5. The dashboard feels like a game launcher.
+6. All three game screens are visually distinctive.
+7. Practice retains every existing option.
+8. Assessment retains every existing option.
+9. History and Results retain all existing information and actions.
+10. Settings retain every existing preference and data operation.
+11. No existing game rules or engines have been changed.
+12. No scoring formulas or timer semantics have been changed.
+13. No persistence behavior or data formats have been changed.
+14. No existing route or functional control has been removed.
+15. The UI works across desktop, tablet, and mobile.
+16. The redesigned application is visually inspected.
+17. Existing tests and build checks are run where possible.
+18. The final project remains runnable.
+19. No new dependencies have been introduced.
+20. The final change summary clearly distinguishes UI modifications from any unavoidable technical adjustments.
+
+If any criterion cannot be verified, state that explicitly.
+
+---
+
+# 18. REQUIRED FINAL DELIVERY
+
+After implementation, provide:
+
+1. The modified source project.
+2. A ZIP containing the actual updated source.
+3. A summary of UI files changed.
+4. A summary of navigation changes.
+5. Confirmation that the three game tabs and sidebar were implemented.
+6. A list of existing options preserved.
+7. Test and build results.
+8. Any limitations or unverified behavior.
+
+Do not provide a mockup as a substitute for the working application.
+
+Do not claim complete success if only the dashboard has been redesigned.
+
+Do not claim that all functionality is preserved unless the relevant checks have actually been performed.
+
+## FINAL INSTRUCTION
+
+Inspect the existing project and the supplied visual references.
+
+Implement a complete UI-only redesign.
+
+Use a persistent main-navigation sidebar and a prominent ribbon containing exactly three dedicated game tabs for Quick-Fire Math, Memory Maze, and Path Finder.
+
+Give the entire application a cohesive premium cognitive arcade identity.
+
+Preserve every existing option, route, interaction, engine, calculation, timer, setting, workflow, and data operation.
+
+**Change the presentation. Preserve the behavior. Keep every existing option. Do not simplify the application by removing functionality.**
+
+Start implementing directly in the existing codebase.

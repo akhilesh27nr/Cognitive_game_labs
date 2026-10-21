@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #070B19;
+    --bg-surface: #0E152B;
+    --bg-elevated: #151F3D;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --accent-math: #F59E0B;
+    --accent-maze: #7C3AED;
+    --accent-path: #14B8A6;
+    --border-subtle: #1E293B;
+  }
+
+  html {
+    background-color: #070B19;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.08), transparent 38%),
+      radial-gradient(circle at 82% 18%, rgba(139, 92, 246, 0.10), transparent 42%),
+      radial-gradient(circle at 50% 90%, rgba(20, 184, 166, 0.06), transparent 45%),
+      #070B19;
+    color: #F8FAFC;
+    min-height: 100vh;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [role="gridcell"] {
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle float animation for Math Bubbles when reduced motion is off */
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bubble-float {
+  animation: bubbleFloat 3.6s ease-in-out infinite;
+}
+
+/* Custom arcade card surfaces */
+.arcade-hero-bg {
+  background:
+    radial-gradient(circle at 76% 42%, rgba(139, 92, 246, 0.28), transparent 45%),
+    radial-gradient(circle at 22% 80%, rgba(245, 158, 11, 0.16), transparent 45%),
+    linear-gradient(135deg, #101935 0%, #171D3F 52%, #0F172A 100%);
+}
+
+.game-card-math {
+  background:
+    radial-gradient(circle at 85% 50%, rgba(245, 158, 11, 0.25), transparent 55%),
+    linear-gradient(145deg, rgba(69, 26, 3, 0.55) 0%, rgba(17, 24, 39, 0.95) 65%, rgba(15, 23, 42, 0.98) 100%);
+}
+
+.game-card-maze {
+  background:
+    radial-gradient(circle at 85% 50%, rgba(124, 58, 237, 0.28), transparent 55%),
+    linear-gradient(145deg, rgba(46, 16, 101, 0.6) 0%, rgba(17, 24, 39, 0.95) 65%, rgba(15, 23, 42, 0.98) 100%);
+}
+
+.game-card-path {
+  background:
+    radial-gradient(circle at 85% 50%, rgba(20, 184, 166, 0.25), transparent 55%),
+    linear-gradient(145deg, rgba(19, 78, 74, 0.55) 0%, rgba(17, 24, 39, 0.95) 65%, rgba(15, 23, 42, 0.98) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
